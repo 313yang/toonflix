@@ -9,17 +9,47 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Hello flutter!'),
-          centerTitle: true,
-          backgroundColor: Colors.amber,
-        ),
-        body: const Center(
-          child: Text('Hello world!'),
-        ),
-      ),
+          backgroundColor: Color(0xFF181818),
+          body: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 50,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          "Hello, Yang",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 26,
+                            fontFamily: "Pretendard",
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        Text(
+                          "Wellcome back",
+                          style: TextStyle(
+                            fontFamily: "Pretendard",
+                            color: Colors.white38,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          )),
     );
   }
 }
