@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toonflix/widgets/Button.dart';
 
 void main() {
   runApp(const App());
@@ -10,6 +11,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(fontFamily: 'Pretendard'),
       home: Scaffold(
           backgroundColor: Color(0xFF181818),
           body: Padding(
@@ -33,14 +35,12 @@ class App extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 26,
-                            fontFamily: "Pretendard",
                             fontWeight: FontWeight.w700,
                           ),
                         ),
                         Text(
                           "Wellcome back",
                           style: TextStyle(
-                            fontFamily: "Pretendard",
                             color: Colors.white38,
                           ),
                         ),
@@ -54,7 +54,6 @@ class App extends StatelessWidget {
                 Text(
                   "Total Balance",
                   style: TextStyle(
-                    fontFamily: "Pretendard",
                     color: Colors.white70,
                     fontSize: 22,
                   ),
@@ -62,7 +61,6 @@ class App extends StatelessWidget {
                 Text(
                   "\$5 194 482",
                   style: TextStyle(
-                    fontFamily: "Pretendard",
                     color: Colors.white,
                     fontSize: 44,
                     fontWeight: FontWeight.w600,
@@ -72,25 +70,16 @@ class App extends StatelessWidget {
                   height: 20,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Color(0xFFF2B33A),
-                          borderRadius: BorderRadius.circular(48)),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 16,
-                          horizontal: 60,
-                        ),
-                        child: Text(
-                          "Transfer",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    )
+                    Button(
+                      bgColor: 0xFFF2B33A,
+                      text: "Transfer",
+                    ),
+                    Button(
+                      color: Colors.white,
+                      text: "Request",
+                    ),
                   ],
                 )
               ],
