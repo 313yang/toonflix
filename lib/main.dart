@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:toonflix/widgets/Button.dart';
+import 'package:flutter/widgets.dart';
+import 'package:toonflix/widgets/button.dart';
+import 'package:toonflix/widgets/money_card.dart';
 
 void main() {
   runApp(const App());
@@ -14,163 +16,123 @@ class App extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Pretendard'),
       home: Scaffold(
           backgroundColor: Color(0xFF181818),
-          body: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 20,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 50,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Hello, Yang",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 26,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        Text(
-                          "Wellcome back",
-                          style: TextStyle(
-                            color: Colors.white38,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 80,
-                ),
-                Text(
-                  "Total Balance",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 22,
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 50,
                   ),
-                ),
-                Text(
-                  "\$5 194 482",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 44,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Button(
-                      bgColor: 0xFFF2B33A,
-                      text: "Transfer",
-                    ),
-                    Button(
-                      color: Colors.white,
-                      text: "Request",
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 100,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "Wallet",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 28,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    Text(
-                      "View All",
-                      style: TextStyle(
-                        color: Colors.white38,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  clipBehavior: Clip.hardEdge, // overflow: hidden
-                  decoration: BoxDecoration(
-                    color: Color(0xFF1F2123),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Euro",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 32,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  "6428",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  "EUR",
-                                  style: TextStyle(
-                                    color: Colors.white70,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        Transform.scale(
-                          scale: 2.2,
-                          child: Transform.translate(
-                            offset: Offset(-3, 14),
-                            child: Icon(
-                              Icons.euro_outlined,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            "Hello, Yang",
+                            style: TextStyle(
                               color: Colors.white,
-                              size: 80,
+                              fontSize: 26,
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
-                        )
-                      ],
+                          Text(
+                            "Wellcome back",
+                            style: TextStyle(
+                              color: Colors.white38,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 80,
+                  ),
+                  Text(
+                    "Total Balance",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 22,
                     ),
                   ),
-                )
-              ],
+                  Text(
+                    "\$5 194 482",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 44,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Button(
+                        bgColor: 0xFFF2B33A,
+                        text: "Transfer",
+                      ),
+                      Button(
+                        color: Colors.white,
+                        text: "Request",
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Wallet",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        "View All",
+                        style: TextStyle(
+                          color: Colors.white38,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  MoneyCard(
+                    title: "Euro",
+                    amount: 6328,
+                    code: "EUR",
+                    icon: Icons.euro_symbol_sharp,
+                    order: 1,
+                  ),
+                  MoneyCard(
+                    title: "Doller",
+                    amount: 633428,
+                    code: "USD",
+                    icon: Icons.attach_money_sharp,
+                    order: 2,
+                  ),
+                  MoneyCard(
+                    title: "Bitcoin",
+                    amount: 323444,
+                    code: "BTC",
+                    icon: Icons.currency_bitcoin_sharp,
+                    order: 3,
+                  ),
+                ],
+              ),
             ),
           )),
     );
