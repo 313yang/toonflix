@@ -108,57 +108,68 @@ class App extends StatelessWidget {
                   height: 20,
                 ),
                 Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1F2123),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 20,
-                        horizontal: 30,
-                      ),
-                      child: Row(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Euro",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.w600,
+                  clipBehavior: Clip.hardEdge, // overflow: hidden
+                  decoration: BoxDecoration(
+                    color: Color(0xFF1F2123),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Euro",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 32,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "6428",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    "6428",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                    ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  "EUR",
+                                  style: TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 20,
                                   ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "EUR",
-                                    style: TextStyle(
-                                      color: Colors.white70,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ))
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                        Transform.scale(
+                          scale: 2.2,
+                          child: Transform.translate(
+                            offset: Offset(-3, 14),
+                            child: Icon(
+                              Icons.euro_outlined,
+                              color: Colors.white,
+                              size: 80,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           )),
