@@ -15,64 +15,81 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  int counter = 0;
+  List<int> numbers = [];
 
-  void onClicked({bool isPlus = false}) {
+  bool showTitle = true;
+
+  void toggleTitle() {
     setState(() {
-      if (isPlus) {
-        counter += 1;
-      } else {
-        counter > 0 ? counter -= 1 : counter;
-      }
+      showTitle = !showTitle;
+    });
+  }
+
+  void onClicked() {
+    setState(() {
+      numbers.add(numbers.length);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'Pretendard'),
+      theme: ThemeData(
+          fontFamily: 'Pretendard',
+          textTheme: TextTheme(
+              titleLarge: TextStyle(
+            color: Colors.white,
+          ))),
       home: Scaffold(
         backgroundColor: Color(0xFF181818),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Click Count",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 32,
-                ),
-              ),
-              Text(
-                "$counter",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 32,
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () => onClicked(isPlus: true),
-                    icon: Icon(
-                      Icons.add_box,
-                      color: Colors.white,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () => onClicked(),
-                    icon: Icon(
-                      Icons.remove_circle,
-                      color: Colors.white,
-                    ),
-                  )
-                ],
+              showTitle ? MyLargeTitle() : Text("loading..."),
+              IconButton(
+                onPressed: toggleTitle,
+                icon: Icon(Icons.tab),
               )
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MyLargeTitle extends StatefulWidget {
+  const MyLargeTitle({
+    super.key,
+  });
+
+  @override
+  State<MyLargeTitle> createState() => _MyLargeTitleState();
+}
+
+class _MyLargeTitleState extends State<MyLargeTitle> {
+  int count = 0;
+  @override
+  void initState() {
+    super.initState();
+    print("init!");
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print("dispose!");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print("build:");
+    return Text(
+      "My Large Title",
+      style: TextStyle(
+        color: Theme.of(context).textTheme.titleLarge?.color,
+        fontSize: 32,
       ),
     );
   }
